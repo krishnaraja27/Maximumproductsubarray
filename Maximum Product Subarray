@@ -1,0 +1,39 @@
+Given an array Arr[] that contains N integers (may be positive, negative or zero). Find the product of the maximum product subarray.
+Example 1:
+Input:
+N = 5
+Arr[] = {6, -3, -10, 0, 2}
+Output: 180
+Explanation: Subarray with maximum product
+is [6, -3, -10] which gives product as 180.
+
+###################################################Python Code########################################
+class Solution:
+
+	# Function to find maximum
+	# product subarray
+	def maxProduct(self,arr, n):
+		# code here
+		ans=1
+		maximum=-10000000
+		for i in range(0,n,1):
+		    ans*=arr[i]
+		    if ans>=maximum:
+		        maximum=ans
+		    if arr[i]==0:
+		        ans=1
+		ans=1
+		        
+		 
+		 
+		for j in range(n-1,-1,-1):
+		     ans*=arr[j]
+		     if ans>=maximum:
+		         maximum=ans
+		     if arr[j]==0:
+		         ans=1
+		         
+		return maximum
+		
+
+\
